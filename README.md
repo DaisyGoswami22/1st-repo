@@ -20,6 +20,11 @@
     SMTP_HOST =
     SMTP_PORT =
 
+## MongoDB
+
+    MongoDB Must be Installed or You can use Online MongoDB Cluster
+    MongoDB Compass is needed so that You can see the database without using CLI
+
 ### Frontend
 
     ReactJs { For Now Normal HTML }
