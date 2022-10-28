@@ -1,98 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Student Management System</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    
-    <!-- Boxicons CDN link -->
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    
-</head>
-<body>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+    <link
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
     <div class="sidebar">
-        <div class="logo_content">
-            <div class="logo">
-                <i class='bx bx-male-female'></i>
-                <div class="logo_name">Student Management System</div>
-            </div>
+      <div class="logo-details">
+        <div class="logo_name">Student Management System</div>
+        <i class="bx bx-menu" id="btn"></i>
+      </div>
+      <ul class="nav-list">
+        <li>
+          <i class="bx bx-search"></i>
+          <input type="text" placeholder="Search..." />
 
-            <i class='bx bx-menu' id="btn"></i>
-        </div>   
-        <ul class="nav_list">
-            <li>
-                
-                    <i class='bx bx-search'></i>
-                    <input type="text" placeholder="Search...">
-                
-                <span class="tooltip">Search</span>
-            </li>
-            <li>
-                <a href="#">
-                    <i class='bx bx-grid-alt'></i>
-                    <span class="links_name">Dashboard</span>
-                </a>
-                <span class="tooltip">Dashboard</span>
-            </li>
-            <li>
-                <a href="#">
-                    <i class='bx bx-user'></i>
-                    <span class="links_name">User</span>
-                </a>
-                <span class="tooltip">User</span>
-            </li>
-            <li>
-                <a href="#">
-                    <i class='bx bx-user-pin'></i>
-                    <span class="links_name">Student</span>
-                </a>
-                <span class="tooltip">Student</span>
-            </li>
-            <li>
-                <a href="#">
-                    <i class='bx bx-user-pin'></i>
-                    <span class="links_name">Teacher</span>
-                </a>
-                <span class="tooltip">Teacher</span>
-            </li>
-            <li>
-                <a href="#">
-                    <i class='bx bxs-user'></i>
-                    <span class="links_name">Admin</span>
-                </a>
-                <span class="tooltip">Admin</span>
-            </li>
-            <li>
-                <a href="#">
-                    <i class='bx bx-cog'></i>
-                    <span class="links_name">Settings</span>
-                </a>
-                <span class="tooltip">Settings</span>
-            </li>
-        </ul>    
-        <a href="#">
-        <i class='bx bx-log-out' id="log_out"></i>
-            <span class="links_name">Log Out</span>
-        </a>
+          <span class="tooltip">Search</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bx-grid-alt"></i>
+            <span class="links_name">Dashboard</span>
+          </a>
+          <span class="tooltip">Dashboard</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bx-user"></i>
+            <span class="links_name">User</span>
+          </a>
+          <span class="tooltip">User</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bx-user-pin"></i>
+            <span class="links_name">Student</span>
+          </a>
+          <span class="tooltip">Student</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bx-user-pin"></i>
+            <span class="links_name">Teacher</span>
+          </a>
+          <span class="tooltip">Teacher</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bxs-user"></i>
+            <span class="links_name">Admin</span>
+          </a>
+          <span class="tooltip">Admin</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bx-cog"></i>
+            <span class="links_name">Settings</span>
+          </a>
+          <span class="tooltip">Settings</span>
+        </li>
+      </ul>
+      <div>
+        <i class='bx bx-log-out' id="log_out">LogOut</i>
+      </div>
     </div>
-    <div class="home_content">
-        <div class="text">Home Content</div>
-    </div>
-
+    <section class="home-section">
+      <div class="text">Home Content</div>
+    </section>
     <script>
-        let btn = document.querySelector("#btn");
-        let sidebar = document.querySelector(".sidebar");
-        let searchBtn = document.querySelector("bx-search");
+      let sidebar = document.querySelector(".sidebar");
+      let closeBtn = document.querySelector("#btn");
+      let searchBtn = document.querySelector(".bx-search");
 
-        btn.onclick = function(){
-            sidebar.classList.toggle("active");
+      closeBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("open");
+        menuBtnChange(); //calling the function(optional)
+      });
+
+      searchBtn.addEventListener("click", () => {
+        // Sidebar open when you click on the search iocn
+        sidebar.classList.toggle("open");
+        menuBtnChange(); //calling the function(optional)
+      });
+
+      // following are the code to change sidebar button(optional)
+      function menuBtnChange() {
+        if (sidebar.classList.contains("open")) {
+          closeBtn.classList.replace("bx-menu", "bx-menu-alt-right"); //replacing the iocns class
+        } else {
+          closeBtn.classList.replace("bx-menu-alt-right", "bx-menu"); //replacing the iocns class
         }
-        searchBtn.onclick = function(){
-            sidebar.classList.toggle("active");
-        }
-        
+      }
     </script>
-</body>
+  </body>
 </html>
