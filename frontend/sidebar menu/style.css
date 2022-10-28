@@ -31,6 +31,7 @@ body{
     align-items: center;
     opacity: 0;
     pointer-events: none;
+    transition: all 0.5s ease;
 }
 .sidebar .active .logo_content .logo{
     opacity: 1;
@@ -147,6 +148,7 @@ body{
 .sidebar .links_name{
     opacity: 0;
     pointer-events: none;
+    transition: all 0.5s ease;
 }
 .sidebar #log_out{
     position: absolute;
@@ -160,13 +162,19 @@ body{
 .home_content{
     position: absolute;
     height: 100%;
-    width: calc(100% -240px);
-    left: 240px;
+    width: calc(100% -78px);
+    left: 78px;
+    transition: all 0.5s ease;
 }
 .home_content .text{
     font-size: 25px;
     font-weight: 500;
     color: #1d1b31;
     margin: 12px;
+    font-weight: bold;
+}
+.sidebar .active ~ .home_content{
+    width: calc(100% -240px);
+    left: 240px;
 }
 
