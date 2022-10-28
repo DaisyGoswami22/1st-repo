@@ -27,49 +27,49 @@
                     <i class='bx bx-search'></i>
                     <input type="text" placeholder="Search...">
                 
-                <!-- <span class="tooltip">Dashboard</span> -->
+                <span class="tooltip">Search</span>
             </li>
             <li>
                 <a href="#">
                     <i class='bx bx-grid-alt'></i>
                     <span class="links_name">Dashboard</span>
                 </a>
-                <!-- <span class="tooltip">Dashboard</span> -->
+                <span class="tooltip">Dashboard</span>
             </li>
             <li>
                 <a href="#">
                     <i class='bx bx-user'></i>
                     <span class="links_name">User</span>
                 </a>
-                <!-- <span class="tooltip">Dashboard</span> -->
+                <span class="tooltip">User</span>
             </li>
             <li>
                 <a href="#">
                     <i class='bx bx-user-pin'></i>
                     <span class="links_name">Student</span>
                 </a>
-                <!-- <span class="tooltip">Dashboard</span> -->
+                <span class="tooltip">Student</span>
             </li>
             <li>
                 <a href="#">
                     <i class='bx bx-user-pin'></i>
                     <span class="links_name">Teacher</span>
                 </a>
-                <!-- <span class="tooltip">Dashboard</span> -->
+                <span class="tooltip">Teacher</span>
             </li>
             <li>
                 <a href="#">
                     <i class='bx bxs-user'></i>
                     <span class="links_name">Admin</span>
                 </a>
-                <!-- <span class="tooltip">Dashboard</span> -->
+                <span class="tooltip">Admin</span>
             </li>
             <li>
                 <a href="#">
                     <i class='bx bx-cog'></i>
                     <span class="links_name">Settings</span>
                 </a>
-                <!-- <span class="tooltip">Dashboard</span> -->
+                <span class="tooltip">Settings</span>
             </li>
         </ul>    
         <a href="#">
@@ -77,5 +77,22 @@
             <span class="links_name">Log Out</span>
         </a>
     </div>
+    <div class="home_content">
+        <div class="text">Home Content</div>
+    </div>
+
+    <script>
+        let btn = document.querySelector("#btn");
+        let sidebar = document.querySelector(".sidebar");
+        let searchBtn = document.querySelector("bx-search");
+
+        btn.onclick = function(){
+            sidebar.classList.toggle("active");
+        }
+        searchBtn.onclick = function(){
+            sidebar.classList.toggle("active");
+        }
+        
+    </script>
 </body>
 </html>
