@@ -1,16 +1,18 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins" ,sans-serif;
+    font-family: "Poppins", sans-serif;
 }
-body{
+
+body {
     position: relative;
     min-height: 100vh;
     width: 100%;
     overflow: hidden;
 }
-.sidebar{
+
+.sidebar {
     position: fixed;
     top: 0;
     left: 0;
@@ -20,10 +22,12 @@ body{
     padding: 6px 14px;
     transition: all 0.5s ease;
 }
-.sidebar .active{
-    width: 240px;
+
+.active {
+    width: 240px !important;
 }
-.sidebar .logo_content .logo{
+
+.sidebar .logo_content .logo {
     color: #fff;
     display: flex;
     height: 60px;
@@ -33,20 +37,24 @@ body{
     pointer-events: none;
     transition: all 0.5s ease;
 }
-.sidebar .active .logo_content .logo{
+
+.sidebar .active .logo_content .logo {
     opacity: 1;
     pointer-events: none;
 }
-.logo_content .logo i{
+
+.logo_content .logo i {
     font-size: 29px;
     margin-right: 5px;
 }
-.logo_content .logo .logo_name{
+
+.logo_content .logo .logo_name {
     font-size: 20px;
     font-weight: 403px;
     font-weight: bold;
 }
-.sidebar #btn{
+
+.sidebar #btn {
     position: absolute;
     color: #fff;
     top: 6px;
@@ -58,13 +66,16 @@ body{
     line-height: 40px;
     transform: translateX(-50%);
 }
-.sidebar .active #btn{
+
+.sidebar .active #btn {
     left: 90%;
 }
-.sidebar ul{
+
+.sidebar ul {
     margin-top: 20px;
 }
-.sidebar ul li{
+
+.sidebar ul li {
     position: relative;
     height: 70px;
     width: 100%;
@@ -72,11 +83,12 @@ body{
     list-style: none;
     line-height: 30px;
 }
-.sidebar ul li .tooltip{
+
+.sidebar ul li .tooltip {
     position: absolute;
     left: 122px;
     top: 0;
-    transform: translate(-50% , -50%);
+    transform: translate(-50%, -50%);
     border-radius: 6px;
     height: 35px;
     width: 122px;
@@ -89,16 +101,19 @@ body{
     pointer-events: none;
     display: block;
 }
-.sidebar .active ul li .tooltip{
+
+.sidebar .active ul li .tooltip {
     display: none;
 }
-.sidebar ul li:hover .tooltip{
+
+.sidebar ul li:hover .tooltip {
     transition: all 0.5s ease;
     opacity: 1;
     top: 50%;
 
 }
-.sidebar ul li input{
+
+.sidebar ul li input {
     position: absolute;
     height: 80%;
     width: 100%;
@@ -112,7 +127,8 @@ body{
     font-size: 18px;
     color: #fff;
 }
-.sidebar ul li .bx-search{
+
+.sidebar ul li .bx-search {
     position: absolute;
     z-index: 99;
     color: #fff;
@@ -120,12 +136,13 @@ body{
     top: 5px;
     transition: all 0.5s ease;
 }
-.sidebar ul li .bx-search:hover{
+
+.sidebar ul li .bx-search:hover {
     background: #fff;
     color: #1d1b31;
 }
 
-.sidebar ul li a{
+.sidebar ul li a {
     color: #fff;
     display: flex;
     align-items: center;
@@ -134,23 +151,27 @@ body{
     border-radius: 12px;
     white-space: nowrap;
 }
-.sidebar ul li a:hover{
+
+.sidebar ul li a:hover {
     color: #11101d;
     background: #fff;
 }
-.sidebar ul li  i{
+
+.sidebar ul li i {
     height: 50px;
     min-width: 40px;
     border-radius: 12px;
     line-height: 50px;
     text-align: center;
 }
-.sidebar .links_name{
+
+.sidebar .links_name {
     opacity: 0;
     pointer-events: none;
     transition: all 0.5s ease;
 }
-.sidebar #log_out{
+
+.sidebar #log_out {
     position: absolute;
     left: 69%;
     bottom: 15px;
@@ -159,22 +180,27 @@ body{
     font-size: 20px;
     color: #fff;
 }
-.home_content{
-    position: absolute;
+
+.home_content {
+    margin-left: 78px;
     height: 100%;
     width: calc(100% -78px);
-    left: 78px;
     transition: all 0.5s ease;
 }
-.home_content .text{
+
+.home_content_margin {
+    margin-left: 240px;
+}
+
+.home_content .text {
     font-size: 25px;
     font-weight: 500;
     color: #1d1b31;
     margin: 12px;
     font-weight: bold;
 }
-.sidebar .active ~ .home_content{
+
+.sidebar .active~.home_content {
     width: calc(100% -240px);
     left: 240px;
 }
-
