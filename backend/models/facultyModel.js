@@ -18,10 +18,6 @@ const userSchema = new mongoose.Schema(
       validate: [validator.isEmail, "Please enter a valid email"],
       unique: true,
     },
-    designation: {
-      type: String,
-      required: [true, "Please Enter Designation"],
-    },
     password: {
       type: String,
       required: [true, "Please enter your password"],
@@ -33,14 +29,14 @@ const userSchema = new mongoose.Schema(
         type: String,
         required: true,
       },
-      url: {
+    url: {
         type: String,
         required: true,
       },
     },
     role: {
       type: String,
-      default: "receptionist",
+      default: "teacher",
     },
 
     resetPasswordToken: String,
@@ -56,7 +52,7 @@ userSchema.pre("save", async function (next) {
   this.password = await bcrypt.hash(this.password, 10);
 });
 
-// JWT Token
+// JSON Web Token
 userSchema.methods.getJWTToken = function () {
   return jwt.sign({ id: this._id }, process.env.JWT_SECRET, {
     expiresIn: process.env.JWT_EXPIRE,

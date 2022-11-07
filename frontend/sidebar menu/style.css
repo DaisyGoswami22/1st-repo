@@ -52,7 +52,7 @@
 
 .sidebar .logo-details #btn {
     position: absolute;
-    top: 50%;
+    top: 80%;
     right: 0;
     transform: translateY(-50%);
     font-size: 22px;

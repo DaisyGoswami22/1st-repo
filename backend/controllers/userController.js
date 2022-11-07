@@ -1,8 +1,8 @@
-const ErrorHandler = require("../../utils/errorHandler");
-const catchAsyncErrors = require("../../middleware/catchAsyncErrors");
+const ErrorHandler = require("../utils/errorHandler");
+const catchAsyncErrors = require("../middleware/catchAsyncErrors");
 const User = require("../../models/user/userModel");
-const sendToken = require("../../utils/jwtToken");
-const sendEmail = require("../../utils/sendEmail");
+const sendToken = require("../utils/jwtToken");
+const sendEmail = require("../utils/sendEmail");
 const crypto = require("crypto");
 
 exports.registerUser = catchAsyncErrors(async (req, res, next) => {

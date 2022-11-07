@@ -9,9 +9,15 @@ app.use(cookieParser());
 app.use(cors());
 
 // route imports
-const users = require("./routes/user/userRoutes");
+// const users = require("./routes/user/userRoutes"); 
 
-app.use("/api/v1", users);
+const student = require("./routes/studentRoutes");
+
+// app.use("/api/v1", users);
+
+app.use("/api/v1", student);
+
+
 
 // middleware for error
 app.use(errorMiddleware);
