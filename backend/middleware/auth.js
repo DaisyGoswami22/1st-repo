@@ -1,9 +1,9 @@
 const ErrorHandler = require("../utils/errorHandler");
 const catchAsyncErrors = require("./catchAsyncErrors");
 const jwt = require("jsonwebtoken");
-const User = require("../models/user/userModel");
+const Faculty = require("../models/facultyModel");
 
-exports.isAuthenticatedUser = catchAsyncErrors(async (req, res, next) => {
+exports.isAuthenticatedFaculty = catchAsyncErrors(async (req, res, next) => {
   const { token } = req.cookies;
 
   if (!token)
@@ -11,14 +11,14 @@ exports.isAuthenticatedUser = catchAsyncErrors(async (req, res, next) => {
 
   const decodedData = jwt.verify(token, process.env.JWT_SECRET);
 
-  req.user = await User.findById(decodedData.id);
+  req.faculty = await Faculty.findById(decodedData.id);
 
   next();
 });
 
 exports.authorizeRoles = (...roles) => {
   return (req, res, next) => {
-    if (!roles.includes(req.user.role))
+    if (!roles.includes(req.faculty.role))
       return next(new ErrorHandler("You aren't allowed to access", 403));
 
     next();

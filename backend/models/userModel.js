@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const validator = require("validator");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const crypto = require("crypto");
@@ -15,12 +14,13 @@ const userSchema = new mongoose.Schema(
     email: {
       type: String,
       required: [true, "Please enter your email"],
-      validate: [validator.isEmail, "Please enter a valid email"],
       unique: true,
     },
-    designation: {
-      type: String,
+    number: {
+      type: Number,
       required: [true, "Please Enter Designation"],
+      maxLength: 10,
+      minLength: 10,
     },
     password: {
       type: String,
@@ -38,10 +38,27 @@ const userSchema = new mongoose.Schema(
         required: true,
       },
     },
+    address: {
+      type: String,
+      maxLength: [100, "Address cannot be more then 100 characters"],
+      required: [true, "Please enter address"],
+    },
+    DOB: {
+      type: String,
+      required: [true, "Please enter DOB"],
+    },
     role: {
       type: String,
-      default: "receptionist",
+      default: "professor",
     },
+    subjects: [
+      {
+        subject: {
+          type: mongoose.Types.ObjectId,
+          ref: "Subject",
+        },
+      },
+    ],
 
     resetPasswordToken: String,
     resetPasswordExpire: Date,
