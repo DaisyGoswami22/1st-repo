@@ -1,30 +1,20 @@
-## Student Management System
+## make the routes
 
-# Backend
+## import the routes to app
 
-    Express
-    MongoDB
-    NodeJs
+<!-- config -->
 
-## Add these in Config/config.env
+PORT = 4000
+CLIENT = http://127.0.0.1:3000
+MONGO_URI= "mongodb://localhost:27017/bca-management-system"
 
-    PORT =
-    CLIENT =
-    MONGO_URI =
-    JWT_SECRET =
-    JWT_EXPIRE =
-    COOKIE_EXPIRE =
-    SMPT_SERVICE =
-    SMPT_USER =
-    SMPT_PASSWORD =
-    SMTP_HOST =
-    SMTP_PORT =
+JWT_SECRET = mukut keyboard uporot khuj kodhai diba (put any thing here, random stings with number etc etc)
+JWT_EXPIRE = 5d
+COOKIE_EXPIRE = 5
 
-## MongoDB
+SMPT_SERVICE = "gmail"
+SMPT_USER =ec046b55db57d4
+SMPT_PASSWORD = a8ae41aa6796f9
 
-    MongoDB Must be Installed or You can use Online MongoDB Cluster
-    MongoDB Compass is needed so that You can see the database without using CLI
-
-### Frontend
-
-    ReactJs { For Now Normal HTML }
+SMTP_HOST =smtp.mailtrap.io
+SMTP_PORT =465
